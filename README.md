@@ -9,6 +9,7 @@ Run npm install in ~/MagicMirror/modules/MMM-GoogleTrafficTimes to install the m
 
 # Using the module
 To use this module, add it to the modules array in the config/config.js file:
+```
 var config = {
     modules: [
         {
@@ -17,14 +18,14 @@ var config = {
             config: {
                 key: 'YOUR_KEY',
                 origin: 'SW1A 1AA',
-                destination1: 'Work:XXX',
+                destination1: 'Work:SW1A 2PW',
                 destination2: 'Gym:XXX',
                 destination3: 'School:XXX',
             },
         }
     ]
 }
-
+```
 # Google API Key
 In order to use this module you will need a Google Maps API which is available from the Google GCP console.
 You will need to enable the following APIs for your key, Maps JavaScript API, Geocoding API, Distance Matrix API.
