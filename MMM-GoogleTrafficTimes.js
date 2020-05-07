@@ -3,20 +3,11 @@ Module.register("MMM-GoogleTrafficTimes",{
         // Module config defaults
         defaults : {
                 key: 'AIzaSyC-kfiA4noILxEX7QR-xICbxJySLeql-OA',
-                lat: '',
-                lng: '',
                 home: 'SK9 5QA',
                 work: 'M1 3LD',
                 yoga: 'Handforth Rd, Handforth, Wilmslow SK9 3PE',
                 joe: 'WA9 4DT',
-                height: '300px',
-                width: '600px',
-                zoom: 10,
-                mapTypeId: 'roadmap',
-                styledMapType: 'standard',
-                disableDefaultUI: true,
-                updateInterval: 900000,
-        backgroundColor: 'rgba(0, 0, 0, 0)'
+                updateInterval: 900000
         },
 
         start: function() {
