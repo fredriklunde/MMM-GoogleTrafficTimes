@@ -1,7 +1,7 @@
 {
   "name": "MMM-GoogleTrafficTimes",
   "version": "1.0.0",
-  "description": "A module that displays a map, centered at provided coordinates, with Google Maps Traffic information.",
+  "description": "A module that hows travel times taking into account Google traffic information",
   "main": "MMM-GoogleTrafficTimes.js",
   "author": "",
   "license": "MIT",
