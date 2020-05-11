@@ -26,6 +26,16 @@ var config = {
     ]
 }
 ```
+* key = your Google API key as described in the relevant section of this readme
+* origin = This is the location all travel times to the destinations below will be measured from.
+* destination1 = This is the first location you need travel times to (required).
+* destination2 = This is the second location you need travel times to (optional).
+* destination3 = This is the third location you need travel times to (optional).
+
+In this release the origin and destination addresses have been tested as a Postcode or Zip Code (or similar) only.
+
+Whilst the Google API can accept a multitude of formats from lomg for addresses to lat&long co-ordinates this script has some matching code to make the results format nicely and this has had some issues with format other than Zip or Post codes. This will hopefully be addressed in a later release.
+
 # Google API Key
 In order to use this module you will need a Google Maps API which is available from the Google GCP console.
 You will need to enable the following APIs for your key, Maps JavaScript API, Geocoding API, Distance Matrix API.
