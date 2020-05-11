@@ -2,11 +2,11 @@ Module.register("MMM-GoogleTrafficTimes",{
 
         // Module config defaults
         defaults : {
-                key: 'AIzaSyC-kfiA4noILxEX7QR-xICbxJySLeql-OA',
-                home: 'SK9 5QA',
-                work: 'M1 3LD',
-                yoga: 'Handforth Rd, Handforth, Wilmslow SK9 3PE',
-                joe: 'WA9 4DT',
+                key: '',
+                origin: 'SW1A 1AA',
+                destination1: 'Work:SW1A 2PW',
+                destination2: 'Gym:XXX',
+                destination3: 'School:XXX',
                 updateInterval: 900000
         },
 
@@ -15,7 +15,7 @@ Module.register("MMM-GoogleTrafficTimes",{
         Log.info("Starting module: " + this.name);
 
         if (this.config.key === "") {
-                Log.error("MMM-GoogleTrafficTimes: key not set!");
+                Log.error("MMM-GoogleTrafficTimes: API key not provided or valid!");
                 return;
         }
 
@@ -26,10 +26,18 @@ Module.register("MMM-GoogleTrafficTimes",{
 
 	// Override dom generator.
 	getDom: function() {
-                var home = this.config.home;
-                var work = this.config.work;
-                var yoga = this.config.yoga;
-                var joe = this.config.joe;
+                var origin = this.config.origin;
+                var location1 = this.config.destination1.split(':')[1];
+                var location2 = this.config.destination2.split(':')[1];
+                var location3 = this.config.destination3.split(':')[1];
+
+                var name1 = this.config.destination1.split(':')[0];
+                var name2 = this.config.destination2.split(':')[0];
+                var name3 = this.config.destination3.split(':')[0];
+               
+		var re1 = new RegExp(location1, 'g');
+                var re2 = new RegExp(location2, 'g');
+                var re3 = new RegExp(location3, 'g');
 
                 var wrapper = document.createElement("div");
 		wrapper.style = "text-align:left;font-size:0.65em;line-height:normal";
@@ -49,8 +57,8 @@ Module.register("MMM-GoogleTrafficTimes",{
                 var service = new google.maps.DistanceMatrixService;
 
         service.getDistanceMatrix({
-          origins: [home],
-          destinations: [work, yoga, joe],
+          origins: [origin],
+          destinations: [location1, location2, location3],
           travelMode: 'DRIVING',
           drivingOptions: {
                 departureTime: new Date(Date.now())
@@ -69,16 +77,14 @@ Module.register("MMM-GoogleTrafficTimes",{
             for (var i = 0; i < originList.length; i++) {
               var results = response.rows[i].elements;
               for (var j = 0; j < results.length; j++) {
-			if (destinationList[j].match(/M1/)) {wrapper.innerHTML += results[j].duration_in_traffic.text + ' to Work' + '<br>'};
-			if (destinationList[j].match(/SK9/)) {wrapper.innerHTML += results[j].duration_in_traffic.text + ' to Yoga' + '<br>'};
-			if (destinationList[j].match(/WA9/)) {wrapper.innerHTML += results[j].duration_in_traffic.text + ' to Parkside Avenue' + '<br>'};
-                        //wrapper.innerHTML += results[j].duration.text + ' to ' + destinationList[j] + '<br>';
+                        if (destinationList[j].match(re1)) {wrapper.innerHTML += results[j].duration_in_traffic.text + ' to ' + name1 + '<br>'};
+                        if (destinationList[j].match(re2)) {wrapper.innerHTML += results[j].duration_in_traffic.text + ' to ' + name2 + '<br>'};
+                        if (destinationList[j].match(re3)) {wrapper.innerHTML += results[j].duration_in_traffic.text + ' to ' + name3 + '<br>'};
               }
             }
           }
         });
 	}
-		//wrapper.innerHTML = this.config.work;
 		return wrapper;
 	}
 });
