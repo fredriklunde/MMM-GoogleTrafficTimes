@@ -1,7 +1,7 @@
 {
   "name": "MMM-GoogleTrafficTimes",
   "version": "1.0.0",
-  "description": "A module that hows travel times taking into account Google traffic information",
+  "description": "A module that shows travel times taking into account Google traffic information",
   "main": "MMM-GoogleTrafficTimes.js",
   "author": "",
   "license": "MIT",
@@ -16,7 +16,5 @@
     "time-grunt": "latest"
   },
   "dependencies": {
-    "fs": "latest",
-    "path": "latest"
   }
 }
