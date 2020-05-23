@@ -10,6 +10,10 @@ Module.register("MMM-GoogleTrafficTimes",{
                 updateInterval: 900000
         },
 
+        getStyles: function () {
+                return ["MMM-GoogleTrafficTimes.css"];
+        },
+
         start: function() {
         var self = this;
         Log.info("Starting module: " + this.name);
@@ -77,9 +81,11 @@ Module.register("MMM-GoogleTrafficTimes",{
             for (var i = 0; i < originList.length; i++) {
               var results = response.rows[i].elements;
               for (var j = 0; j < results.length; j++) {
-                        if (destinationList[j].match(re1)) {wrapper.innerHTML += results[j].duration_in_traffic.text + ' to ' + name1 + '<br>'};
-                        if (destinationList[j].match(re2)) {wrapper.innerHTML += results[j].duration_in_traffic.text + ' to ' + name2 + '<br>'};
-                        if (destinationList[j].match(re3)) {wrapper.innerHTML += results[j].duration_in_traffic.text + ' to ' + name3 + '<br>'};
+			var trafficIcon = 'CircleIcon';
+			if (results[j].duration_in_traffic.value > results[j].duration.value) {trafficIcon = 'RedCircleIcon'};
+                        if (destinationList[j].match(re1)) {wrapper.innerHTML += '<span class="' + trafficIcon + '"><span>' +  name1 + '<p></p>' + results[j].duration_in_traffic.text + '</span></span>'};
+                        if (destinationList[j].match(re2)) {wrapper.innerHTML += '<span class="' + trafficIcon + '"><span>' +  name2 + '<p></p>' + results[j].duration_in_traffic.text + '</span></span>'};
+                        if (destinationList[j].match(re3)) {wrapper.innerHTML += '<span class="' + trafficIcon + '"><span>' +  name3 + '<p></p>' + results[j].duration_in_traffic.text + '</span></span>'};
               }
             }
           }
