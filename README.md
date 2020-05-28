@@ -1,6 +1,7 @@
 # Module: Google Traffic Times
 
 A module for the MagicMirror that displays driving times from a location to one or more destinations based on Google Maps Traffic information. As it uses the times in traffic the values are dynamic as long as there is reasonaby accurate traffic detail available to Google in your area.
+The results are displayed in response bubbles which have a white circle as long as the travel time in traffic is the same or shorter than the equivalent Google holds excluding traffic data. If the in traffic travle time is longer then th circle border changes to red in order to quickly identify the increased travel time.
 
 # Installation
 Navigate into your MagicMirror's ~/MagicMirror/modules folder and execute git clone https://github.com/pjestico/MMM-GoogleTrafficTimes.git
@@ -41,7 +42,5 @@ In order to use this module you will need a Google Maps API which is available f
 You will need to enable the following APIs for your key, Maps JavaScript API, Geocoding API, Distance Matrix API.
 These are all, at the time of writing (May 2020), available under the free allowance as long as hits to the API are sensible and the default refresh rate of 15 minutes has not resulted in a charge.
 
-# Dependencies
-Installed via npm install:
-fs
-path
+# Suggestions
+Please feel free to raise an issue on GitHub for any features you would like to see or usage issues you experience and I will endeavour to address them.
