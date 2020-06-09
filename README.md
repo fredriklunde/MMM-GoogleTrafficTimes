@@ -43,6 +43,7 @@ You will need to enable the following APIs for your key, Maps JavaScript API, Ge
 These are all, at the time of writing (May 2020), available under the free allowance as long as hits to the API are sensible and the default refresh rate of 15 minutes has not resulted in a charge.
 
 # Example Screenshot
+![alt text](https://github.com/pjestico/MMM-GoogleTrafficTimes/blob/master/MMM-Traffic.png?raw=true)
 
 
 # Suggestions
