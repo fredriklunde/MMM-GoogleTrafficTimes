@@ -21,7 +21,7 @@ var config = {
                 origin: 'SW1A 1AA',
                 destination1: 'Work:SW1A 2PW',
                 destination2: 'Gym:XXX',
-                destination3: 'School:XXX',
+                destination3: 'Beach:XXX',
             },
         }
     ]
@@ -32,6 +32,12 @@ var config = {
 * destination1 = This is the first location you need travel times to (required).
 * destination2 = This is the second location you need travel times to (optional).
 * destination3 = This is the third location you need travel times to (optional).
+
+The Destinations need to be entered in the form Label:Address.
+
+In the example config above for Destination 1 we have a Label of Work with an Address of SW1A 2PW.
+
+The Label appears as the title for each result bubble as shown in the Example Screenshot below.
 
 In this release the origin and destination addresses have been tested as a Postcode or Zip Code (or similar) only.
 
