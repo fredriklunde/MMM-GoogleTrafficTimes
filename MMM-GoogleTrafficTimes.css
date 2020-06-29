@@ -1,44 +1,27 @@
-.CircleIcon {
+.text {
     display:inline-block;
-    line-height:0px;
-    
-    border-radius:50%;
-    border:2px solid;
-    background-image: linear-gradient(to right, rgba(169,169,169,0.1), rgba(169,169,169,0.5), rgba(169,169,169,0.1));
-    
+    line-height:0px;    
     font-size:16px;
     text-align: center;
 }
 
-.CircleIcon span {
+.text span {
     display:inline-block;
-    
-    padding-top:50%;
-    padding-bottom:50%;
-    
-    margin-left:8px;
-    margin-right:8px;
+    padding-top:5px;
+    padding-top:5px;
 }
 
-.RedCircleIcon {
+.textWhenLate {
     display:inline-block;
     line-height:0px;
-
-    border-radius:50%;
-    border:2px solid #F40513;
-    background-image: linear-gradient(to right, rgba(169,169,169,0.1), rgba(169,169,169,0.5), rgba(169,169,169,0.1));
-
+    color: #F40513;
     font-size:16px;
     text-align: center;
 }
 
-.RedCircleIcon span {
+.textWhenLate span {
     display:inline-block;
-
-    padding-top:50%;
-    padding-bottom:50%;
-
-    margin-left:8px;
-    margin-right:8px;
+    padding-top:5px;
+    padding-top:5px;
 }
 

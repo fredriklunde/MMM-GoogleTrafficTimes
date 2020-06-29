@@ -81,8 +81,8 @@ Module.register("MMM-GoogleTrafficTimes",{
             for (var i = 0; i < originList.length; i++) {
               var results = response.rows[i].elements;
               for (var j = 0; j < results.length; j++) {
-			var trafficIcon = 'CircleIcon';
-			if (results[j].duration_in_traffic.value > results[j].duration.value) {trafficIcon = 'RedCircleIcon'};
+			var trafficIcon = 'text';
+			if (results[j].duration_in_traffic.value > results[j].duration.value) {trafficIcon = 'textWhenLate'};
                         if (destinationList[j].match(re1)) {wrapper.innerHTML += '<span class="' + trafficIcon + '"><span>' +  name1 + '<p></p>' + results[j].duration_in_traffic.text + '</span></span>'};
                         if (destinationList[j].match(re2)) {wrapper.innerHTML += '<span class="' + trafficIcon + '"><span>' +  name2 + '<p></p>' + results[j].duration_in_traffic.text + '</span></span>'};
                         if (destinationList[j].match(re3)) {wrapper.innerHTML += '<span class="' + trafficIcon + '"><span>' +  name3 + '<p></p>' + results[j].duration_in_traffic.text + '</span></span>'};
