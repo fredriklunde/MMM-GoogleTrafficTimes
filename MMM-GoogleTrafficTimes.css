@@ -1,7 +1,8 @@
 .text {
     display:inline-block;
+    font-weight: bold;
     line-height:0px;    
-    font-size:16px;
+    font-size:20px;
     text-align: center;
 }
 
@@ -13,9 +14,10 @@
 
 .textWhenLate {
     display:inline-block;
+    font-weight: bold;
     line-height:0px;
     color: #F40513;
-    font-size:16px;
+    font-size:20px;
     text-align: center;
 }
 
