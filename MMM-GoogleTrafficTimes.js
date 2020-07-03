@@ -90,9 +90,9 @@ Module.register("MMM-GoogleTrafficTimes", {
                                                                 const timeLongerThanUsual = duration.value - durationInTraffic.value;
                                                                 textWhenLongerThanUsual = '+' + timeLongerThanUsual + ' minuter'
                                                         };
-                                                        if (destinationList[j].match(re1)) { wrapper.innerHTML += '<span class="' + trafficIcon + '"><span>' + name1 + ' - ' + durationInTraffic.text + textWhenLongerThanUsual + '</span></span>' };
-                                                        if (destinationList[j].match(re2)) { wrapper.innerHTML += '<span class="' + trafficIcon + '"><span>' + name2 + ' - ' + durationInTraffic.text + textWhenLongerThanUsual + '</span></span>' };
-                                                        if (destinationList[j].match(re3)) { wrapper.innerHTML += '<span class="' + trafficIcon + '"><span>' + name3 + ' - ' + durationInTraffic.text + textWhenLongerThanUsual + '</span></span>' };
+                                                        if (destinationList[j].match(re1)) { wrapper.innerHTML += '<p><span class="' + trafficIcon + '"><span>' + name1 + ' - ' + durationInTraffic.text + textWhenLongerThanUsual + '</span></span></p>' };
+                                                        if (destinationList[j].match(re2)) { wrapper.innerHTML += '<p><span class="' + trafficIcon + '"><span>' + name2 + ' - ' + durationInTraffic.text + textWhenLongerThanUsual + '</span></span></p>' };
+                                                        if (destinationList[j].match(re3)) { wrapper.innerHTML += '<p><span class="' + trafficIcon + '"><span>' + name3 + ' - ' + durationInTraffic.text + textWhenLongerThanUsual + '</span></span></p>' };
                                                 }
                                         }
                                 }
