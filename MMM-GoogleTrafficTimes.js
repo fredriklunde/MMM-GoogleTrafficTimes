@@ -83,7 +83,7 @@ Module.register("MMM-GoogleTrafficTimes", {
                                                 for (var j = 0; j < results.length; j++) {
                                                         var trafficIcon = 'text';
                                                         var textWhenLongerThanUsual = "";
-                                                        if (results[j].duration_in_traffic.value && results[j].duration.value) {
+                                                        if (results[j].duration_in_traffic && results[j].duration) {
                                                                 if (results[j].duration_in_traffic.value > results[j].duration.value) {
                                                                         trafficIcon = 'textWhenLate'
                                                                         const timeLongerThanUsual = results[j].duration.text;
