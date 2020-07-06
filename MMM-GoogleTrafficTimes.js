@@ -87,8 +87,8 @@ Module.register("MMM-GoogleTrafficTimes", {
                                                         var textWhenLongerThanUsual = "";
                                                         if (durationInTraffic.value > duration.value) {
                                                                 trafficIcon = 'textWhenLate'
-                                                                const timeLongerThanUsual = durationInTraffic.value - duration.value;
-                                                                textWhenLongerThanUsual = ' (+' + timeLongerThanUsual + ' minuter)'
+                                                                const timeLongerThanUsual = duration.text;
+                                                                textWhenLongerThanUsual = ' (normalt ' + timeLongerThanUsual + ' mins)'
                                                         };
                                                         if (destinationList[j].match(re1)) { wrapper.innerHTML += '<p><span class="' + trafficIcon + '"><span>' + name1 + ' - ' + durationInTraffic.text + textWhenLongerThanUsual + '</span></span></p>' };
                                                         if (destinationList[j].match(re2)) { wrapper.innerHTML += '<p><span class="' + trafficIcon + '"><span>' + name2 + ' - ' + durationInTraffic.text + textWhenLongerThanUsual + '</span></span></p>' };
