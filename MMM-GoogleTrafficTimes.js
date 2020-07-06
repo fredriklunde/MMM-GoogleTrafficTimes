@@ -82,17 +82,15 @@ Module.register("MMM-GoogleTrafficTimes", {
                                                 var results = response.rows[i].elements;
                                                 for (var j = 0; j < results.length; j++) {
                                                         var trafficIcon = 'text';
-                                                        const duration = results[j].duration;
-                                                        const durationInTraffic = results[j].duration_in_traffic;
                                                         var textWhenLongerThanUsual = "";
-                                                        if (durationInTraffic.value > duration.value) {
+                                                        if (results[j].duration_in_traffic.value > results[j].duration.value) {
                                                                 trafficIcon = 'textWhenLate'
-                                                                const timeLongerThanUsual = duration.text;
+                                                                const timeLongerThanUsual = results[j].duration.text;
                                                                 textWhenLongerThanUsual = ' (normalt ' + timeLongerThanUsual + ')';
                                                         };
-                                                        if (destinationList[j].match(re1)) { wrapper.innerHTML += '<p><span class="' + trafficIcon + '"><span>' + name1 + ' - ' + durationInTraffic.text + textWhenLongerThanUsual + '</span></span></p>' };
-                                                        if (destinationList[j].match(re2)) { wrapper.innerHTML += '<p><span class="' + trafficIcon + '"><span>' + name2 + ' - ' + durationInTraffic.text + textWhenLongerThanUsual + '</span></span></p>' };
-                                                        if (destinationList[j].match(re3)) { wrapper.innerHTML += '<p><span class="' + trafficIcon + '"><span>' + name3 + ' - ' + durationInTraffic.text + textWhenLongerThanUsual + '</span></span></p>' };
+                                                        if (destinationList[j].match(re1)) { wrapper.innerHTML += '<p><span class="' + trafficIcon + '"><span>' + name1 + ' - ' + results[j].duration_in_traffic.text + textWhenLongerThanUsual + '</span></span></p>' };
+                                                        if (destinationList[j].match(re2)) { wrapper.innerHTML += '<p><span class="' + trafficIcon + '"><span>' + name2 + ' - ' + results[j].duration_in_traffic.text + textWhenLongerThanUsual + '</span></span></p>' };
+                                                        if (destinationList[j].match(re3)) { wrapper.innerHTML += '<p><span class="' + trafficIcon + '"><span>' + name3 + ' - ' + results[j].duration_in_traffic.text + textWhenLongerThanUsual + '</span></span></p>' };
                                                 }
                                         }
                                 }
